@@ -1,7 +1,7 @@
 import { Router } from 'express';
 const router = Router();
 
-import { signup, signin, profile, testing} from '../controllers/auth'
+import { signup, signin, profile, testing} from '../controllers/auth.controller'
 import { TokenValidation } from '../libs/verifyToken'
 
 //post

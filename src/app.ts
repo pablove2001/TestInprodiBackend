@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
 
-import AuthController from './routes/auth'
+import AuthController from './routes/auth.routes'
 
 const app: Application = express();
 
@@ -13,6 +13,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', AuthController);
+app.use('/auth', AuthController);
 
 export default app;
