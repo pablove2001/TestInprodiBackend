@@ -24,10 +24,10 @@ export const signup = async (req: Request, res: Response) => {
         const savedUser = await newUser.save();
 
         const token: string = jwt.sign({ _id: savedUser._id }, process.env['TOKEN_SECRET'] || '', {
-            expiresIn: 60 * 60 * 24
+            expiresIn: 60 * 60 * 2
         });
-        // res.header('auth-token', token).json(token);
-        res.header('auth-token', token).json(savedUser);
+        
+        res.header('token', token).json(savedUser);
     } catch (e) {
         res.status(400).json(e);
     }
@@ -43,7 +43,7 @@ export const signin = async (req: Request, res: Response) => {
 
     // Create a Token
     const token: string = jwt.sign({ _id: user._id }, process.env['TOKEN_SECRET'] || '');
-    res.header('auth-token', token).json(token);
+    res.header('token', token).json(token);
 };
 
 export const profile = async (req: Request, res: Response) => {
