@@ -53,3 +53,7 @@ export const profile = async (req: Request, res: Response) => {
     }
     res.json(user);
 };
+
+export const testing = async (req: Request, res: Response) => {
+    res.json('chinga tu madre test')
+}
