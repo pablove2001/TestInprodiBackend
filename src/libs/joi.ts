@@ -5,6 +5,7 @@ export const signupValidation = (data: IUser) => {
     const userSchema = Joi.object({
         username: Joi
             .string()
+            .alphanum()
             .min(4)
             .max(30)
             .required(),
@@ -13,7 +14,11 @@ export const signupValidation = (data: IUser) => {
             .required(),
         password: Joi
             .string()
-            .min(6)
+            .min(8)
+            .required(),
+        usertype: Joi
+            .string()
+            .regex(/^administrator|employee|client$/)
             .required()
     });
     return userSchema.validate(data);
@@ -26,7 +31,7 @@ export const signinValidation = (data: IUser) => {
             .required(),
         password: Joi
             .string()
-            .min(6)
+            .min(8)
             .required()
     });
     return userSchema.validate(data);

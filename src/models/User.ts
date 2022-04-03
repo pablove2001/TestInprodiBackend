@@ -5,6 +5,7 @@ export interface IUser extends Document {
     username: string;
     email: string;
     password: string;
+    usertype: string;
     encrypPassword(password: string): Promise<string>;
     validatePassword(password: string): Promise<boolean>;
 };
@@ -25,6 +26,11 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    usertype: {
+        type: String,
+        required: true,
+        lowercase: true
     }
 }, {
     timestamps: true

@@ -18,7 +18,8 @@ export const signup = async (req: Request, res: Response) => {
         const newUser: IUser = new User({
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            usertype: req.body.usertype
         });
         newUser.password = await newUser.encrypPassword(newUser.password);
         const savedUser = await newUser.save();
@@ -55,5 +56,5 @@ export const profile = async (req: Request, res: Response) => {
 };
 
 export const testing = async (req: Request, res: Response) => {
-    res.json('chinga tu madre test')
+    res.json('ejecutando test');
 }
