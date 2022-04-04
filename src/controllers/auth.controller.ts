@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 
 import User, { IUser } from '../models/User'
-import { signupValidation, signinValidation } from '../libs/joi'
+import { signupValidation, signinValidation } from '../libs/auth.joi'
 import jwt from 'jsonwebtoken';
 
 export const signup = async (req: Request, res: Response) => {
