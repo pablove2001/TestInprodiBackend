@@ -104,5 +104,5 @@ export const seevuelosemployee = async (req: Request, res: Response) => {
     //const vuelos = await Vuelo.find({datetime: {$regex: /^a/, $options: 'i'}});
     //const vuelos = await Vuelo.find({ datetime: req.body }).where('datetime').in(req.body.date);
     res.json({ vuelos });
-    console.log('hola', req.body.date)
+    console.log('hola', req.body.date);
 }
