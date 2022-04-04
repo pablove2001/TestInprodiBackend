@@ -71,6 +71,9 @@ export const buyvuelos = async (req: Request, res: Response) => {
     if (!vuelo) {
         return res.status(404).json('No Vuelo found');
     }
+    if (req.body.numpassegers <= 0) {
+        return res.status(400).json('The number of hundreds is wrong');
+    }
     if ( vuelo.passegerslist.length + req.body.numpassegers > vuelo.maxpassegers ) {
         return res.status(416).json('Number of seats not available');
     }
@@ -79,5 +82,27 @@ export const buyvuelos = async (req: Request, res: Response) => {
         vuelo.passegerslist.push(user.email);
     }    
 
-    res.json({ vuelo });
+    const savedVuelo = await vuelo.save();
+    res.json(savedVuelo);
+}
+
+export const seevuelosemployee = async (req: Request, res: Response) => {
+    // Validation User Employee
+    const user = await User.findById(req.userId);
+    if (!user) {
+        return res.status(404).json('No User found');
+    }
+    console.log(user.usertype);
+    if (user.usertype != 'employee') {
+        return res.status(403).json('User without permissions');
+    }
+
+    // See
+    if (req.body.datetime == undefined) return res.status(400).json('falta la fecha');
+
+    const vuelos = await Vuelo.find({ datetime: req.body.datetime });
+    //const vuelos = await Vuelo.find({datetime: {$regex: /^a/, $options: 'i'}});
+    //const vuelos = await Vuelo.find({ datetime: req.body }).where('datetime').in(req.body.date);
+    res.json({ vuelos });
+    console.log('hola', req.body.date)
 }
