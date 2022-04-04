@@ -7,9 +7,13 @@ export const vaddValidation = (data: IVuelo) => {
             .string()
             .alphanum()
             .required(),
-        datetime: Joi
+        date: Joi
             .string()
-            .regex(/^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})(\s)([0-1][0-9]|2[0-3])(:)([0-5][0-9])$/)
+            .regex(/^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/)
+            .required(),
+        time: Joi
+            .string()
+            .regex(/^([0-1][0-9]|2[0-3])(:)([0-5][0-9])$/)
             .required(),
         from: Joi
             .string()

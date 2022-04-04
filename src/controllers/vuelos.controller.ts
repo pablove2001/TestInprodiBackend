@@ -22,7 +22,8 @@ export const vcreate = async (req: Request, res: Response) => {
     try {
         const newVuelo: IVuelo = new Vuelo({
             airline: req.body.airline,
-            datetime: req.body.datetime,
+            date: req.body.date,
+            time: req.body.time,
             from: req.body.from,
             to: req.body.to,
             maxpassegers: req.body.maxpassegers
@@ -51,7 +52,7 @@ export const vdelete = async (req: Request, res: Response) => {
 }
 
 export const seevuelos = async (req: Request, res: Response) => {
-    const vuelos = await Vuelo.find();
+    const vuelos = await Vuelo.find().select("-passegerslist").select("-createdAt").select("-updatedAt").select("-__v");
     res.json({ vuelos });
 }
 
@@ -98,11 +99,18 @@ export const seevuelosemployee = async (req: Request, res: Response) => {
     }
 
     // See
-    if (req.body.datetime == undefined) return res.status(400).json('falta la fecha');
+    if (req.body.date == undefined && req.body.airline == undefined) {
+        var vuelos = await Vuelo.find();
+    }
+    else if(req.body.date != undefined && req.body.airline == undefined) {
+        var vuelos = await Vuelo.find({ date: req.body.date });
+    }
+    else if(req.body.date == undefined && req.body.airline != undefined) {
+        var vuelos = await Vuelo.find({ airline: req.body.airline });
+    }
+    else {
+        var vuelos = await Vuelo.find({ date: req.body.date, airline: req.body.airline });
+    }
 
-    const vuelos = await Vuelo.find({ datetime: req.body.datetime });
-    //const vuelos = await Vuelo.find({datetime: {$regex: /^a/, $options: 'i'}});
-    //const vuelos = await Vuelo.find({ datetime: req.body }).where('datetime').in(req.body.date);
     res.json({ vuelos });
-    console.log('hola', req.body.date);
 }

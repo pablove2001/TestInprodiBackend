@@ -2,7 +2,8 @@ import { Schema, model, Document } from 'mongoose'
 
 export interface IVuelo extends Document {
     airline: string;
-    datetime: string;
+    date: string;
+    time: string;
     from: string;
     to: string;
     maxpassegers: number;
@@ -14,7 +15,11 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    datetime: {
+    date: {
+        type: String,
+        required: true
+    },
+    time: {
         type: String,
         required: true
     },
