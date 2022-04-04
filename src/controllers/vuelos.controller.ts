@@ -45,10 +45,11 @@ export const vdelete = async (req: Request, res: Response) => {
     if (user.usertype != 'administrator') {
         return res.status(403).json('User without permissions');
     }
-
-    // Delete Vuelo
-    await Vuelo.findOneAndRemove({ _id: req.body._id });
-    res.json({ response: 'Vuelo deleted Successfully' });
+    
+    // Delete Baggage
+    const vuelodelete = await Vuelo.findOneAndRemove({ _id: req.body._id });
+    if(vuelodelete) res.json({ response: 'Vuelo deleted' });
+    else res.json({ response: 'Vuelo no deleted' });
 }
 
 export const seevuelos = async (req: Request, res: Response) => {
