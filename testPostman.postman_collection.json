@@ -1,0 +1,763 @@
+{
+	"info": {
+		"_postman_id": "c1b944f1-9429-4177-bf97-f84abd3b8a26",
+		"name": "testPostman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "auth/signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"client3\",\r\n\t\"email\": \"client3@gmail.com\",\r\n\t\"password\": \"12345678\",\r\n\t\"usertype\": \"employee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth/signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"email\": \"client2@gmail.com\",\r\n\t\"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signin"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "comment/add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhMmViNTc4NzE0NTNmZjAxY2FjNTkiLCJpYXQiOjE2NDkxMzczNTR9.yMttbxRs1x-vBsXLzOK6KiGJZ-3h9vpkmf3DtQYjM1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"commenttext\":\"tercer comentario, este es del client2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/comment/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comment/see",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhMmViNTc4NzE0NTNmZjAxY2FjNTkiLCJpYXQiOjE2NDkxMzczNTR9.yMttbxRs1x-vBsXLzOK6KiGJZ-3h9vpkmf3DtQYjM1k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/comment/see",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								"see"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comment/see/employee",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZDcyOTYzMDUwYzJkMmNkODE4ZWMiLCJpYXQiOjE2NDkxMzc0NTJ9.sT7pvEUxWcrPlCgcuZcGJyFIKJMjAU_RICaAN_oSB_4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/comment/see/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								"see",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comment/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhMmViNTc4NzE0NTNmZjAxY2FjNTkiLCJpYXQiOjE2NDkxMzczNTR9.yMttbxRs1x-vBsXLzOK6KiGJZ-3h9vpkmf3DtQYjM1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"_id\": \"624c538cb527da5520eda138\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/comment/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comment/delete/employee",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZDcyOTYzMDUwYzJkMmNkODE4ZWMiLCJpYXQiOjE2NDkxMzc0NTJ9.sT7pvEUxWcrPlCgcuZcGJyFIKJMjAU_RICaAN_oSB_4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"_id\": \"624c538cb527da5520eda138\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/comment/delete/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								"delete",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "profile/see",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhMmViNTc4NzE0NTNmZjAxY2FjNTkiLCJpYXQiOjE2NDkxNzExNzl9.iQQZvRUaRm4ZF-Lwemvpzu40jT7lIC25KSkI6iISxMg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/profile/see",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile",
+								"see"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile/see/employee",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiOTM3ZmYzM2Q1MzBiYWNjMWFkMGMiLCJpYXQiOjE2NDkxMjAxMzJ9.g4tQBpUmRE2EeOI9BikeJUhRYv6aVICCY2j5N2qPy6Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/profile/see/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile",
+								"see",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhMjc1MDU0OGE0OTVlYWNkOGZmZjUiLCJpYXQiOjE2NDkxNzAxNDN9.0MqDAa76osD6e5KoOQCIDwhq-osz9Uxf1-Xb8knfcOg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/profile/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile/delete/employee",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiOTM3ZmYzM2Q1MzBiYWNjMWFkMGMiLCJpYXQiOjE2NDkxMjAxMzJ9.g4tQBpUmRE2EeOI9BikeJUhRYv6aVICCY2j5N2qPy6Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"_id\": \"624bd72963050c2d2cd818ec\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profile/delete/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile",
+								"delete",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile/delete/administrator",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhNjkwOTYzOTIzZDU5MmNlOGVhMzYiLCJpYXQiOjE2NDkxNzA0Nzh9.fOV0zCWguY8y_bYC4Er4Y7Oq1T4FGLZLPhq25AV2E5Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"_id\": \"624bd72963050c2d2cd818ec\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/profile/delete/administrator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile",
+								"delete",
+								"administrator"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vuelos",
+			"item": [
+				{
+					"name": "vuelos/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhNjkwOTYzOTIzZDU5MmNlOGVhMzYiLCJpYXQiOjE2NDkxNzA0Nzh9.fOV0zCWguY8y_bYC4Er4Y7Oq1T4FGLZLPhq25AV2E5Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"airline\": \"aeromexico\",\r\n\t\"date\": \"07/07/2027\",\r\n\t\"time\": \"03:00\",\r\n\t\"from\": \"Tlaquepaque, Jalisco, México\",\r\n\t\"to\": \"Mérida, Ciudad en México, México\",\r\n\t\"maxpassegers\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/vuelos/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vuelos",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vuelos/see",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/vuelos/see",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vuelos",
+								"see"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vuelos/see/employee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiOTM3ZmYzM2Q1MzBiYWNjMWFkMGMiLCJpYXQiOjE2NDkxMjAxMzJ9.g4tQBpUmRE2EeOI9BikeJUhRYv6aVICCY2j5N2qPy6Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"date\": \"03/04/2022\",\r\n\t\"airline\": \"aeromexico\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/vuelos/see/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vuelos",
+								"see",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vuelos/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhNjkwOTYzOTIzZDU5MmNlOGVhMzYiLCJpYXQiOjE2NDkxNzA0Nzh9.fOV0zCWguY8y_bYC4Er4Y7Oq1T4FGLZLPhq25AV2E5Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"_id\": \"624b3f1717a2c51c50c0fa38\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/vuelos/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vuelos",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "buy",
+			"item": [
+				{
+					"name": "buy/add",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhMmViNTc4NzE0NTNmZjAxY2FjNTkiLCJpYXQiOjE2NDkxNzExNzl9.iQQZvRUaRm4ZF-Lwemvpzu40jT7lIC25KSkI6iISxMg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"_id\": \"624b43d4550ede3dd0d35d9d\",\r\n\t\"numpassegers\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/buy/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"buy",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buy/see",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhMmViNTc4NzE0NTNmZjAxY2FjNTkiLCJpYXQiOjE2NDkxNzExNzl9.iQQZvRUaRm4ZF-Lwemvpzu40jT7lIC25KSkI6iISxMg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/buy/see",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"buy",
+								"see"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "baggage",
+			"item": [
+				{
+					"name": "baggage/add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhMmViNTc4NzE0NTNmZjAxY2FjNTkiLCJpYXQiOjE2NDkxNzExNzl9.iQQZvRUaRm4ZF-Lwemvpzu40jT7lIC25KSkI6iISxMg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"idvuelo\": \"624b3f7717a2c51c50c0fa39\",\r\n\t\"baggagedescrip\": \"4 maletas y 2 para llevar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/baggage/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"baggage",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "baggage/see",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhMmViNTc4NzE0NTNmZjAxY2FjNTkiLCJpYXQiOjE2NDkxNzExNzl9.iQQZvRUaRm4ZF-Lwemvpzu40jT7lIC25KSkI6iISxMg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/baggage/see",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"baggage",
+								"see"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "baggage/see/employee",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiOTM3ZmYzM2Q1MzBiYWNjMWFkMGMiLCJpYXQiOjE2NDkxMjAxMzJ9.g4tQBpUmRE2EeOI9BikeJUhRYv6aVICCY2j5N2qPy6Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/baggage/see/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"baggage",
+								"see",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "baggage/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRhMmViNTc4NzE0NTNmZjAxY2FjNTkiLCJpYXQiOjE2NDkxNzExNzl9.iQQZvRUaRm4ZF-Lwemvpzu40jT7lIC25KSkI6iISxMg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"_id\": \"624c5cdfb527da5520eda13a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/baggage/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"baggage",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "baggage/delete/employee",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiOTM3ZmYzM2Q1MzBiYWNjMWFkMGMiLCJpYXQiOjE2NDkxMjAxMzJ9.g4tQBpUmRE2EeOI9BikeJUhRYv6aVICCY2j5N2qPy6Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"_id\": \"624b741eec014d6f2c865546\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/baggage/delete/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"baggage",
+								"delete",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
