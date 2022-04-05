@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import AuthController from './routes/auth.routes';
 import VueloController from './routes/vuelo.routes';
 import BaggageController from './routes/baggage.routes';
+import ProfileController from './routes/profile.routes';
 
 const app: Application = express();
 
@@ -15,8 +16,9 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // Routes
-app.use(AuthController);
+app.use('/auth', AuthController);
 app.use('/vuelos', VueloController);
-app.use('/baggage', BaggageController)
+app.use('/baggage', BaggageController);
+app.use('/profile', ProfileController);
 
 export default app;
