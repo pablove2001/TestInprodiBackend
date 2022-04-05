@@ -5,6 +5,7 @@ import AuthController from './routes/auth.routes';
 import VueloController from './routes/vuelo.routes';
 import BaggageController from './routes/baggage.routes';
 import ProfileController from './routes/profile.routes';
+import CommentController from './routes/comment.routes';
 
 const app: Application = express();
 
@@ -20,5 +21,6 @@ app.use('/auth', AuthController);
 app.use('/vuelos', VueloController);
 app.use('/baggage', BaggageController);
 app.use('/profile', ProfileController);
+app.use('/comment', CommentController);
 
 export default app;
