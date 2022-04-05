@@ -1,7 +1,12 @@
-# Typescript REST API JWT
+# Test Inprodi Backend
 
-this is a REST API example using Nodejs, Mongodb, Typescript and JsonWebtoken with Passport.
+It's a REST API using TypeScript, Express, Mongodb, Mongoose, etc. for a system of an aviation company.
 
 # Requeriments
 
 - Mongodb
+- Express
+
+# Command to start
+
+- npm run dev
