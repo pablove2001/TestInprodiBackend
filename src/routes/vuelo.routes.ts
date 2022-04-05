@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { vcreate, vdelete, seevuelos, buyvuelos, seevuelosemployee } from '../controllers/vuelos.controller'
+import { vcreate, vdelete, seevuelos,  seevuelosemployee } from '../controllers/vuelos.controller'
 import { TokenValidation } from '../libs/verifyToken'
 
 const router = Router();
@@ -14,8 +14,5 @@ router.get('/see/employee', TokenValidation, seevuelosemployee);
 
 //delete
 router.delete('/delete', TokenValidation, vdelete);
-
-//patch
-router.patch('/buy', TokenValidation, buyvuelos);
 
 export default router;
